@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Toolkit — Free AdSense Calculators for Publishers</title>
+<meta name="description" content="10 free, instant AdSense calculators to estimate earnings, CTR, CPC, RPM and more. No login, no data stored, 100% client-side. Built for publishers.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense Toolkit — Free AdSense Calculators for Publishers">
+<meta property="og:description" content="10 free, instant AdSense calculators to estimate earnings, CTR, CPC, RPM and more. No login required.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense Toolkit — Free AdSense Calculators for Publishers">
+<meta name="twitter:description" content="10 free, instant AdSense calculators to estimate earnings, CTR, CPC, RPM and more.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Structured data: Organization + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AdSense Toolkit",
+  "url": "https://adsensetoolkit.example.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://adsensetoolkit.example.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "What is AdSense RPM?","acceptedAnswer": {"@type": "Answer","text": "RPM (Revenue per Mille) is the estimated earnings a publisher generates per 1,000 pageviews. It is calculated by dividing total earnings by pageviews and multiplying by 1,000."}},
+    {"@type": "Question","name": "How is CTR calculated?","acceptedAnswer": {"@type": "Answer","text": "Click-Through Rate is calculated by dividing total clicks by total impressions and multiplying by 100 to get a percentage."}},
+    {"@type": "Question","name": "What is CPC?","acceptedAnswer": {"@type": "Answer","text": "Cost Per Click is the average amount an advertiser pays each time a visitor clicks an ad, calculated by dividing total earnings by total clicks."}},
+    {"@type": "Question","name": "Can these calculators estimate earnings?","acceptedAnswer": {"@type": "Answer","text": "Yes, the Earnings Calculator estimates daily, monthly, and yearly revenue based on pageviews, CTR, and CPC."}},
+    {"@type": "Question","name": "Are calculations accurate?","acceptedAnswer": {"@type": "Answer","text": "The calculators use the same formulas Google AdSense uses internally, but real results can vary due to seasonality, niche, and ad placement."}},
+    {"@type": "Question","name": "Are they free?","acceptedAnswer": {"@type": "Answer","text": "Yes, every calculator on AdSense Toolkit is completely free with no account or login required."}},
+    {"@type": "Question","name": "Is data stored?","acceptedAnswer": {"@type": "Answer","text": "No. All calculations happen locally in your browser. Nothing you enter is transmitted or stored on a server."}},
+    {"@type": "Question","name": "Can beginners use them?","acceptedAnswer": {"@type": "Answer","text": "Yes, each calculator includes plain-language explanations, formulas, and worked examples designed for beginners and experts alike."}},
+    {"@type": "Question","name": "Do they work on mobile?","acceptedAnswer": {"@type": "Answer","text": "Yes, every calculator is fully responsive and optimized for mobile, tablet, and desktop use."}},
+    {"@type": "Question","name": "How often are formulas updated?","acceptedAnswer": {"@type": "Answer","text": "Formulas are reviewed regularly to stay aligned with how Google AdSense reports metrics."}}
+  ]
+}
+</script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<!-- Animation libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#calculators">Calculators</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="#how-it-works">About</a>
+      <a href="#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="#calculators" class="btn btn-primary btn-sm">Get Started</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#calculators">Calculators</a>
+    <a href="#features">Features</a>
+    <a href="#faq">FAQ</a>
+    <a href="#how-it-works">About</a>
+    <a href="#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="section" style="padding-top:64px;">
+    <div class="blob blob-purple" style="width:420px;height:420px;top:-100px;left:-140px;"></div>
+    <div class="blob blob-teal" style="width:360px;height:360px;top:60px;right:-120px;"></div>
+    <div class="container relative z-10" style="display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <span class="eyebrow" data-hero-eyebrow><i data-lucide="sparkles" style="width:14px;height:14px;"></i> 10 free publisher calculators</span>
+        <h1 data-hero-title style="font-size:clamp(36px,5vw,58px);margin-top:20px;">
+          Know your AdSense numbers <span class="text-gradient">before Google does.</span>
+        </h1>
+        <p data-hero-sub style="font-size:18px;color:var(--color-text-secondary);margin-top:20px;max-width:520px;">
+          Estimate earnings, CTR, CPC, RPM, and traffic targets instantly. No login, no spreadsheets, no data leaves your browser.
+        </p>
+        <div data-hero-cta style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
+          <a href="#calculators" class="btn btn-primary">Explore Calculators <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div style="display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;">
+          <div><div style="font-weight:800;font-size:20px;">10+</div><div style="font-size:13px;color:var(--color-text-secondary);">Calculators</div></div>
+          <div><div style="font-weight:800;font-size:20px;">100%</div><div style="font-size:13px;color:var(--color-text-secondary);">Client-side</div></div>
+          <div><div style="font-weight:800;font-size:20px;">Free</div><div style="font-size:13px;color:var(--color-text-secondary);">Always</div></div>
+        </div>
+      </div>
+
+      <div data-hero-visual class="relative" style="height:440px;">
+        <div class="glass-card animate-float" data-float style="position:absolute;top:0;left:10%;width:280px;padding:20px;z-index:3;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <span style="font-size:13px;font-weight:700;color:var(--color-text-secondary);">Monthly Earnings</span>
+            <i data-lucide="trending-up" style="width:16px;height:16px;color:var(--color-accent);"></i>
+          </div>
+          <div style="font-size:30px;font-weight:800;color:var(--color-primary);">$4,218.60</div>
+          <svg viewBox="0 0 240 60" style="margin-top:10px;width:100%;height:50px;">
+            <polyline points="0,50 30,42 60,45 90,30 120,34 150,18 180,22 210,8 240,12" fill="none" stroke="#45A9A9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="glass-card animate-float-delay" data-float style="position:absolute;top:150px;right:0;width:220px;padding:20px;z-index:2;">
+          <div style="font-size:12.5px;font-weight:700;color:var(--color-text-secondary);margin-bottom:10px;">CTR</div>
+          <div style="font-size:24px;font-weight:800;color:var(--color-secondary);">3.42%</div>
+          <div style="height:6px;background:rgba(78,31,110,0.08);border-radius:99px;margin-top:12px;overflow:hidden;">
+            <div style="width:64%;height:100%;background:var(--gradient-accent);border-radius:99px;"></div>
+          </div>
+        </div>
+        <div class="glass-card animate-float-slow" data-float style="position:absolute;bottom:10px;left:0;width:250px;padding:20px;z-index:1;">
+          <div style="font-size:12.5px;font-weight:700;color:var(--color-text-secondary);margin-bottom:10px;">RPM</div>
+          <div style="display:flex;align-items:baseline;gap:6px;">
+            <span style="font-size:26px;font-weight:800;color:var(--color-primary);">$18.90</span>
+            <span style="font-size:12px;color:var(--color-accent);font-weight:700;">↑ 12%</span>
+          </div>
+        </div>
+        <div class="float-shape animate-float" data-float style="width:70px;height:70px;top:200px;left:-10px;z-index:0;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STATS ============================ -->
+  <section class="section" style="padding-top:0;padding-bottom:64px;">
+    <div class="container">
+      <div class="glass-card grid-4" style="padding:40px;" data-aos="fade-up">
+        <div class="stat-item"><div class="stat-number" data-counter="10" data-suffix="+">0</div><div class="stat-label">Calculators</div></div>
+        <div class="stat-item"><div class="stat-number" data-counter="250000" data-suffix="+">0</div><div class="stat-label">Calculations Run</div></div>
+        <div class="stat-item"><div class="stat-number" data-counter="100" data-suffix="%">0</div><div class="stat-label">Client-side</div></div>
+        <div class="stat-item"><div class="stat-number" data-counter="0" data-suffix="s">0</div><div class="stat-label">Instant Results</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CALCULATOR GRID ============================ -->
+  <section class="section" id="calculators">
+    <div class="container">
+      <div class="text-center max-w-640" data-aos="fade-up">
+        <span class="eyebrow">The toolkit</span>
+        <h2 style="font-size:clamp(28px,4vw,38px);margin-top:16px;">Ten calculators. Every AdSense metric.</h2>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16px;">Pick a calculator, enter your numbers, get instant, accurate results.</p>
+      </div>
+
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="calc-icon"><i data-lucide="dollar-sign"></i></div>
+          <h3>Earnings Calculator</h3>
+          <p>Estimate daily, monthly and yearly earnings from pageviews, CTR and CPC.</p>
+          <a href="earnings-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="calc-icon"><i data-lucide="mouse-pointer-click"></i></div>
+          <h3>CTR Calculator</h3>
+          <p>Calculate your click-through rate from impressions and clicks.</p>
+          <a href="ctr-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="calc-icon"><i data-lucide="coins"></i></div>
+          <h3>CPC Calculator</h3>
+          <p>Find your average cost per click from earnings and total clicks.</p>
+          <a href="cpc-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="calc-icon"><i data-lucide="bar-chart-3"></i></div>
+          <h3>RPM Calculator</h3>
+          <p>Measure revenue per thousand pageviews across your site.</p>
+          <a href="rpm-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="calc-icon"><i data-lucide="layout-grid"></i></div>
+          <h3>Page RPM Calculator</h3>
+          <p>Calculate revenue per thousand page impressions specifically.</p>
+          <a href="page-rpm-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="calc-icon"><i data-lucide="target"></i></div>
+          <h3>Target Earnings Calculator</h3>
+          <p>Work backward from a revenue goal to required clicks and pageviews.</p>
+          <a href="target-earnings-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="calc-icon"><i data-lucide="users"></i></div>
+          <h3>Traffic Needed Calculator</h3>
+          <p>Find the pageviews required to reach a target earnings figure.</p>
+          <a href="traffic-needed-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="calc-icon"><i data-lucide="pointer"></i></div>
+          <h3>Clicks Needed Calculator</h3>
+          <p>Calculate the clicks required to hit a target earnings amount.</p>
+          <a href="clicks-needed-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="calc-icon"><i data-lucide="eye"></i></div>
+          <h3>Impressions Needed Calculator</h3>
+          <p>Determine the impressions needed to generate a target number of clicks.</p>
+          <a href="impressions-needed-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="calc-icon"><i data-lucide="calendar-days"></i></div>
+          <h3>Monthly Revenue Calculator</h3>
+          <p>Project weekly, monthly and yearly revenue from a daily figure.</p>
+          <a href="monthly-revenue-calculator.html" class="btn btn-secondary">Open Calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY CHOOSE US ============================ -->
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div data-aos="fade-right">
+        <span class="eyebrow">Why publishers choose us</span>
+        <h2 style="font-size:clamp(26px,4vw,34px);margin-top:16px;">Built for accuracy. Designed for trust.</h2>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16px;">
+          Every formula mirrors how AdSense reports revenue internally. Nothing you type is sent anywhere — all math happens in your browser, instantly.
+        </p>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;">
+          <div class="tip-box"><i data-lucide="shield-check" class="icon"></i><div><strong>Privacy by design</strong><p style="color:var(--color-text-secondary);font-size:14px;margin-top:4px;">No accounts, no tracking, no data stored server-side.</p></div></div>
+          <div class="tip-box"><i data-lucide="zap" class="icon"></i><div><strong>Instant results</strong><p style="color:var(--color-text-secondary);font-size:14px;margin-top:4px;">Calculations run client-side the moment you hit calculate.</p></div></div>
+          <div class="tip-box"><i data-lucide="graduation-cap" class="icon"></i><div><strong>Built to teach</strong><p style="color:var(--color-text-secondary);font-size:14px;margin-top:4px;">Every calculator explains the formula behind the number.</p></div></div>
+        </div>
+      </div>
+      <div class="glass-card" data-aos="fade-left" style="padding:36px;">
+        <div class="grid-2">
+          <div class="result-item"><div class="label">Pageviews</div><div class="value" style="font-size:22px;">120,000</div></div>
+          <div class="result-item"><div class="label">CTR</div><div class="value" style="font-size:22px;">2.8%</div></div>
+          <div class="result-item primary"><div class="label">Daily Earnings</div><div class="value" style="font-size:22px;">$168.00</div></div>
+          <div class="result-item"><div class="label">Monthly</div><div class="value" style="font-size:22px;">$5,040</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FEATURES ============================ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="text-center max-w-640" data-aos="fade-up">
+        <span class="eyebrow">Features</span>
+        <h2 style="font-size:clamp(28px,4vw,38px);margin-top:16px;">Everything a publisher needs</h2>
+      </div>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="0"><div class="calc-icon"><i data-lucide="gauge"></i></div><h3>Fast calculations</h3><p>Results appear instantly with no page reloads.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="50"><div class="calc-icon"><i data-lucide="palette"></i></div><h3>Professional UI</h3><p>A premium interface that feels like a modern SaaS product.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="100"><div class="calc-icon"><i data-lucide="smartphone"></i></div><h3>Mobile friendly</h3><p>Fully responsive across desktop, tablet, and phone.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="150"><div class="calc-icon"><i data-lucide="lock"></i></div><h3>Privacy focused</h3><p>All math runs locally — nothing is ever uploaded.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="0"><div class="calc-icon"><i data-lucide="rocket"></i></div><h3>Instant results</h3><p>No waiting, no spinners, no server round-trips.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="50"><div class="calc-icon"><i data-lucide="layout"></i></div><h3>Responsive design</h3><p>Every layout adapts cleanly at any screen size.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="100"><div class="calc-icon"><i data-lucide="function-square"></i></div><h3>Accurate formulas</h3><p>Formulas match AdSense's own reporting definitions.</p></div>
+        <div class="glass-card calc-card" data-aos="fade-up" data-aos-delay="150"><div class="calc-icon"><i data-lucide="infinity"></i></div><h3>Always free</h3><p>No paywalls, no trials, no login required — ever.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ HOW IT WORKS ============================ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="text-center max-w-640" data-aos="fade-up">
+        <span class="eyebrow">How it works</span>
+        <h2 style="font-size:clamp(28px,4vw,38px);margin-top:16px;">Four steps to your numbers</h2>
+      </div>
+      <div class="grid-4 mt-48">
+        <div class="glass-card step-card" data-aos="fade-up" data-aos-delay="0"><div class="step-num">Step 1</div><h3>Choose a calculator</h3><p>Pick from 10 tools built for specific AdSense metrics.</p></div>
+        <div class="glass-card step-card" data-aos="fade-up" data-aos-delay="50"><div class="step-num">Step 2</div><h3>Enter your values</h3><p>Type in pageviews, CTR, CPC, or earnings — whatever's needed.</p></div>
+        <div class="glass-card step-card" data-aos="fade-up" data-aos-delay="100"><div class="step-num">Step 3</div><h3>Calculate instantly</h3><p>Get results the moment you click calculate, no delay.</p></div>
+        <div class="glass-card step-card" data-aos="fade-up" data-aos-delay="150"><div class="step-num">Step 4</div><h3>Analyze results</h3><p>Read the breakdown and formula behind every figure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section" id="faq">
+    <div class="container max-w-760">
+      <div class="text-center" data-aos="fade-up">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="font-size:clamp(28px,4vw,38px);margin-top:16px;">Frequently asked questions</h2>
+      </div>
+      <div class="glass-card mt-48" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">What is AdSense RPM?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>RPM (Revenue per Mille) is your estimated earnings per 1,000 pageviews. It's calculated by dividing total earnings by pageviews and multiplying by 1,000.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How is CTR calculated?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Click-through rate is total clicks divided by total impressions, multiplied by 100 to express it as a percentage.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What is CPC?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Cost per click is the average amount earned each time a visitor clicks an ad — total earnings divided by total clicks.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can these calculators estimate earnings?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes. The Earnings Calculator projects daily, monthly, and yearly revenue from your pageviews, CTR, and CPC.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are calculations accurate?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>The formulas mirror how AdSense reports metrics, but real-world results vary with seasonality, niche, and ad placement.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are they free?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, every calculator is completely free with no account or subscription required.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is data stored?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>No. Calculations run entirely in your browser — nothing you enter is transmitted or saved.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can beginners use them?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes. Each calculator page includes plain-language explanations, formulas, and worked examples.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do they work on mobile?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, every page is fully responsive and optimized for touch on phones and tablets.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How often are formulas updated?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>We review formulas regularly to keep them aligned with how AdSense calculates and reports each metric.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ NEWSLETTER ============================ -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#calculators">Calculators</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

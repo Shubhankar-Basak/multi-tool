@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Impressions Needed Calculator — Impressions for a Click Goal</title>
+<meta name="description" content="Calculate the ad impressions needed to generate a target number of clicks using your CTR. Free and instant.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/impressions-needed-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense Impressions Needed Calculator — Impressions for a Click Goal">
+<meta property="og:description" content="Calculate the ad impressions needed to generate a target number of clicks using your CTR. Free and instant.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/impressions-needed-calculator.html">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense Impressions Needed Calculator — Impressions for a Click Goal">
+<meta name="twitter:description" content="Calculate the ad impressions needed to generate a target number of clicks using your CTR. Free and instant.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://adsensetoolkit.example.com/"},
+    {"@type": "ListItem","position": 2,"name": "Impressions Needed Calculator","item": "https://adsensetoolkit.example.com/impressions-needed-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Are impressions the same as pageviews?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not exactly \u2014 a single page view can generate multiple ad impressions if more than one ad unit is shown."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Where do I get my CTR for this calculator?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use the CTR Calculator on this site or your AdSense reporting dashboard for an accurate, up-to-date figure."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How does this connect to the Clicks Needed Calculator?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can use the Clicks Needed Calculator to find a click target first, then feed that into this calculator to find the impressions required."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does ad density affect the impressions I need?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ad density affects how impressions relate to pageviews, but not the impressions-to-clicks relationship calculated here."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can I use this for a single ad unit instead of the whole site?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, just use that unit's specific CTR and target click count for a unit-level estimate."
+    }
+  }
+]
+}
+</script>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#calculators">Calculators</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#how-it-works">About</a>
+      <a href="index.html#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="index.html#calculators" class="btn btn-primary btn-sm">All Calculators</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#calculators">Calculators</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#how-it-works">About</a>
+    <a href="index.html#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-top:40px;padding-bottom:24px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html#calculators">Calculators</a><span class="sep">/</span>
+        <span class="current">Impressions Needed Calculator</span>
+      </nav>
+      <div class="text-center max-w-760" style="margin-top:28px;" data-aos="fade-up">
+        <span class="eyebrow"><i data-lucide="eye" style="width:14px;height:14px;"></i> Impressions Needed Calculator</span>
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:18px;">Find the impressions behind your <span class="text-gradient">click goal.</span></h1>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16.5px;">Enter a target click count and your CTR to see the impressions required.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:880px;">
+      <div class="glass-card" style="padding:36px;" data-aos="fade-up">
+        <form data-calculator="impressions-needed" novalidate>
+          <div class="field">
+            <label for="clicks">Target Clicks</label>
+            <div class="input-wrap">
+              <input type="number" id="clicks" name="clicks" placeholder="e.g. 1000" min="0" data-min="0" required>
+              <span class="unit"></span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="ctr">Your CTR</label>
+            <div class="input-wrap">
+              <input type="number" id="ctr" name="ctr" placeholder="e.g. 2.5" min="0.01" max="100" step="0.01" data-min="0.01" required>
+              <span class="unit">%</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="glass-card mt-24" style="padding:36px;" data-results-card hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+          <h3 style="font-size:18px;">Your Results</h3>
+          <button class="btn btn-secondary btn-sm" data-copy-results><i data-lucide="copy" style="width:14px;height:14px;"></i> Copy Results</button>
+        </div>
+        <div class="result-grid">
+          <div class="result-item primary" data-result="impressions"><div class="label">Required Impressions</div><div class="value">—</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container prose" style="max-width:760px;" data-aos="fade-up">
+
+      <h2>What is the Impressions Needed Calculator?</h2>
+      <p>The Impressions Needed Calculator works out how many ad impressions it takes to generate a specific number of clicks, based on your current click-through rate. It's the mirror image of the CTR Calculator: instead of measuring CTR from known impressions and clicks, it uses CTR to project the impressions needed to hit a click target.</p>
+      <p>Enter your target click count and CTR to see the required impressions instantly.</p>
+
+      <h2>Why This Calculator Matters</h2>
+      <p>This calculator is useful when a click target is set first — for example, to feed into the Clicks Needed Calculator's revenue goal — and you need to know how much ad exposure (impressions) it will actually take to get there given your site's typical engagement rate.</p>
+
+      <h3>The Formula</h3>
+      <div class="formula-box">Required Impressions = Target Clicks ÷ (CTR ÷ 100)</div>
+      <p>Dividing the click goal by CTR expressed as a decimal reverses the standard CTR calculation, solving for impressions instead of the rate itself.</p>
+
+      <h3>Worked Example</h3>
+      <div class="example-box">
+        <p style="margin-bottom:0;">To generate <strong>1,000 clicks</strong> at a <strong>2.5% CTR</strong>, you need 1,000 ÷ 0.025 = <strong>40,000 impressions</strong>.</p>
+      </div>
+
+      <h3>How to Use This Calculator</h3>
+      <ul>
+        <li><strong>Target Clicks:</strong> Enter the click count you're aiming to generate, often derived from a revenue goal via the Clicks Needed Calculator.</li>
+        <li><strong>Your CTR:</strong> Use your actual, historical CTR for a realistic impressions figure.</li>
+      </ul>
+      <p>Since impressions and pageviews aren't always a 1:1 match — a single page can show multiple ad impressions — treat this figure as ad impressions specifically, not total site traffic.</p>
+
+      <h3>Tips for Reaching Your Impressions Target</h3>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Adding more ad units per page increases impressions without necessarily increasing pageviews, which can help hit a target faster.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">If your CTR is below niche average, small placement improvements can lower the impressions needed for the same click goal.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Chain this calculator with the Clicks Needed and Target Earnings tools to build a full funnel from revenue goal down to impressions.</p></div>
+
+      <h3>Common Mistakes</h3>
+      <p>It's easy to treat "impressions" and "pageviews" as interchangeable, but a page with three ad units generates roughly three impressions per view, so the impressions figure from this calculator won't map directly onto a pageview or traffic target without accounting for ad density. Using an unrepresentative CTR — from a single strong day rather than a trailing average — is another common source of an unrealistic impressions estimate.</p>
+    
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-760">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="glass-card mt-24" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Are impressions the same as pageviews?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Not exactly — a single page view can generate multiple ad impressions if more than one ad unit is shown.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Where do I get my CTR for this calculator?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Use the CTR Calculator on this site or your AdSense reporting dashboard for an accurate, up-to-date figure.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How does this connect to the Clicks Needed Calculator?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>You can use the Clicks Needed Calculator to find a click target first, then feed that into this calculator to find the impressions required.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does ad density affect the impressions I need?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Ad density affects how impressions relate to pageviews, but not the impressions-to-clicks relationship calculated here.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I use this for a single ad unit instead of the whole site?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, just use that unit's specific CTR and target click count for a unit-level estimate.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Related Calculators</h2>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="mouse-pointer-click"></i></div><h3>CTR Calculator</h3><p>Calculate your click-through rate from impressions and clicks.</p><a href="ctr-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="pointer"></i></div><h3>Clicks Needed Calculator</h3><p>Calculate the clicks required to hit a target earnings amount.</p><a href="clicks-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="target"></i></div><h3>Target Earnings Calculator</h3><p>Work backward from a revenue goal to required clicks and pageviews.</p><a href="target-earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="dollar-sign"></i></div><h3>Earnings Calculator</h3><p>Estimate daily, monthly and yearly earnings from pageviews, CTR and CPC.</p><a href="earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#calculators">Calculators</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="index.html#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

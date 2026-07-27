@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense RPM Calculator — Revenue Per Thousand Pageviews</title>
+<meta name="description" content="Calculate your AdSense RPM (revenue per 1,000 pageviews) from earnings and pageviews. Free, instant, no login required.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/rpm-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense RPM Calculator — Revenue Per Thousand Pageviews">
+<meta property="og:description" content="Calculate your AdSense RPM (revenue per 1,000 pageviews) from earnings and pageviews. Free, instant, no login required.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/rpm-calculator.html">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense RPM Calculator — Revenue Per Thousand Pageviews">
+<meta name="twitter:description" content="Calculate your AdSense RPM (revenue per 1,000 pageviews) from earnings and pageviews. Free, instant, no login required.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://adsensetoolkit.example.com/"},
+    {"@type": "ListItem","position": 2,"name": "RPM Calculator","item": "https://adsensetoolkit.example.com/rpm-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "What does RPM stand for?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "RPM stands for Revenue per Mille, or revenue per 1,000 pageviews \u2014 a standard metric in digital advertising."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How is RPM different from Page RPM?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "RPM uses total pageviews as its denominator, while Page RPM uses ad impressions, which can differ if pages show multiple ad units."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "What's considered a good RPM?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Good RPM varies widely by niche, country mix, and ad density, ranging anywhere from a few dollars to well over $20 for high-value niches."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does RPM include all revenue or just AdSense?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "This calculator uses whatever earnings figure you enter, so it reflects exactly the revenue source you input."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can RPM go up while traffic goes down?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, if remaining visitors engage more with ads or advertiser demand rises, RPM can increase even as raw traffic falls."
+    }
+  }
+]
+}
+</script>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#calculators">Calculators</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#how-it-works">About</a>
+      <a href="index.html#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="index.html#calculators" class="btn btn-primary btn-sm">All Calculators</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#calculators">Calculators</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#how-it-works">About</a>
+    <a href="index.html#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-top:40px;padding-bottom:24px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html#calculators">Calculators</a><span class="sep">/</span>
+        <span class="current">RPM Calculator</span>
+      </nav>
+      <div class="text-center max-w-760" style="margin-top:28px;" data-aos="fade-up">
+        <span class="eyebrow"><i data-lucide="bar-chart-3" style="width:14px;height:14px;"></i> RPM Calculator</span>
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:18px;">Measure revenue per <span class="text-gradient">thousand pageviews.</span></h1>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16.5px;">Enter earnings and pageviews to calculate your site RPM.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:880px;">
+      <div class="glass-card" style="padding:36px;" data-aos="fade-up">
+        <form data-calculator="rpm" novalidate>
+          <div class="field">
+            <label for="earnings">Total Earnings</label>
+            <div class="input-wrap">
+              <input type="number" id="earnings" name="earnings" placeholder="e.g. 320" min="0" data-min="0" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="pageviews">Total Pageviews</label>
+            <div class="input-wrap">
+              <input type="number" id="pageviews" name="pageviews" placeholder="e.g. 40000" min="1" data-min="1" required>
+              <span class="unit"></span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="glass-card mt-24" style="padding:36px;" data-results-card hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+          <h3 style="font-size:18px;">Your Results</h3>
+          <button class="btn btn-secondary btn-sm" data-copy-results><i data-lucide="copy" style="width:14px;height:14px;"></i> Copy Results</button>
+        </div>
+        <div class="result-grid">
+          <div class="result-item primary" data-result="rpm"><div class="label">RPM</div><div class="value">—</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container prose" style="max-width:760px;" data-aos="fade-up">
+
+      <h2>What is the RPM Calculator?</h2>
+      <p>The RPM Calculator shows how much revenue your site generates for every 1,000 pageviews. RPM, short for Revenue per Mille, is one of the most useful metrics for comparing site-wide performance over time or against other publishers, because it normalizes earnings against traffic volume rather than showing a raw dollar figure that traffic swings can distort.</p>
+      <p>Enter your total earnings and total pageviews for a period, and the calculator returns your RPM instantly.</p>
+
+      <h2>Why RPM Matters</h2>
+      <p>Raw earnings alone don't tell you whether your site is monetizing well — a site with rising traffic but flat earnings might actually be monetizing worse per visitor than before. RPM strips out the traffic variable, letting publishers directly compare monetization efficiency across months, content categories, or even different sites in a portfolio.</p>
+
+      <h3>The Formula</h3>
+      <div class="formula-box">RPM = (Total Earnings ÷ Total Pageviews) × 1,000</div>
+      <p>Dividing earnings by pageviews gives revenue per single view; multiplying by 1,000 rescales that into the industry-standard "per thousand" format used throughout digital advertising.</p>
+
+      <h3>Worked Example</h3>
+      <div class="example-box">
+        <p style="margin-bottom:0;">A site earning <strong>$320</strong> from <strong>40,000 pageviews</strong> has an RPM of ($320 ÷ 40,000) × 1,000 = <strong>$8.00</strong> — meaning every 1,000 pageviews generates roughly $8 in ad revenue.</p>
+      </div>
+
+      <h3>How to Use This Calculator</h3>
+      <ul>
+        <li><strong>Total Earnings:</strong> Use your AdSense earnings for the exact date range you're analyzing.</li>
+        <li><strong>Total Pageviews:</strong> Use total site pageviews for that same range, from Analytics or AdSense reporting.</li>
+      </ul>
+      <p>RPM is most useful when tracked consistently — recalculate it weekly or monthly using the same methodology so trends are directly comparable.</p>
+
+      <h3>Tips for Improving RPM</h3>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Test ad density carefully — adding more units can raise RPM up to a point, then start hurting user experience and CTR.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Compare RPM by content category to identify which topics monetize best and deserve more editorial investment.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Watch RPM seasonally, since advertiser budgets — and therefore RPM — typically rise in Q4 and dip in slower months.</p></div>
+
+      <h3>Common Mistakes</h3>
+      <p>A frequent mistake is confusing site-wide RPM with Page RPM, which uses ad impressions rather than pageviews as the denominator — the two numbers will differ whenever a page shows more or fewer than one ad impression per view. Publishers also sometimes compare RPM across sites with very different traffic sources without accounting for how audience geography and intent affect advertiser demand.</p>
+    
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-760">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="glass-card mt-24" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">What does RPM stand for?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>RPM stands for Revenue per Mille, or revenue per 1,000 pageviews — a standard metric in digital advertising.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How is RPM different from Page RPM?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>RPM uses total pageviews as its denominator, while Page RPM uses ad impressions, which can differ if pages show multiple ad units.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What&#x27;s considered a good RPM?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Good RPM varies widely by niche, country mix, and ad density, ranging anywhere from a few dollars to well over $20 for high-value niches.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does RPM include all revenue or just AdSense?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>This calculator uses whatever earnings figure you enter, so it reflects exactly the revenue source you input.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can RPM go up while traffic goes down?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, if remaining visitors engage more with ads or advertiser demand rises, RPM can increase even as raw traffic falls.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Related Calculators</h2>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="dollar-sign"></i></div><h3>Earnings Calculator</h3><p>Estimate daily, monthly and yearly earnings from pageviews, CTR and CPC.</p><a href="earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="layout-grid"></i></div><h3>Page RPM Calculator</h3><p>Calculate revenue per thousand page impressions specifically.</p><a href="page-rpm-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="coins"></i></div><h3>CPC Calculator</h3><p>Find your average cost per click from earnings and total clicks.</p><a href="cpc-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="users"></i></div><h3>Traffic Needed Calculator</h3><p>Find the pageviews required to reach a target earnings figure.</p><a href="traffic-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#calculators">Calculators</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="index.html#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

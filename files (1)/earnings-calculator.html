@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Earnings Calculator — Estimate Daily, Monthly & Yearly Revenue</title>
+<meta name="description" content="Calculate estimated AdSense earnings from pageviews, CTR, and CPC. Get instant daily, monthly, and yearly revenue projections — free, no login required.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/earnings-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense Earnings Calculator — Free Revenue Estimator">
+<meta property="og:description" content="Estimate your AdSense earnings instantly from pageviews, CTR, and CPC.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/earnings-calculator.html">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense Earnings Calculator">
+<meta name="twitter:description" content="Estimate your AdSense earnings instantly from pageviews, CTR, and CPC.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://adsensetoolkit.example.com/"},
+    {"@type": "ListItem","position": 2,"name": "Earnings Calculator","item": "https://adsensetoolkit.example.com/earnings-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "What counts as a pageview for this calculator?","acceptedAnswer": {"@type": "Answer","text": "A pageview is any single load of a page on your site, matching how AdSense counts pageviews in its own reporting."}},
+    {"@type": "Question","name": "Why do my real earnings differ from the estimate?","acceptedAnswer": {"@type": "Answer","text": "Real CPC and CTR fluctuate by niche, season, device mix, and ad placement, so actual earnings will vary around the estimate."}},
+    {"@type": "Question","name": "Should I use average CTR and CPC or my own?","acceptedAnswer": {"@type": "Answer","text": "Use your own historical CTR and CPC from AdSense reporting whenever possible for the most realistic estimate."}},
+    {"@type": "Question","name": "Does this calculator account for ad viewability?","acceptedAnswer": {"@type": "Answer","text": "No, it works from the CTR and CPC you provide, which already reflect whatever viewability your ads achieve."}},
+    {"@type": "Question","name": "Can I use this for a single page instead of a whole site?","acceptedAnswer": {"@type": "Answer","text": "Yes, enter that page's pageviews, CTR, and CPC to estimate earnings for just that page."}}
+  ]
+}
+</script>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#calculators">Calculators</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#how-it-works">About</a>
+      <a href="index.html#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="index.html#calculators" class="btn btn-primary btn-sm">All Calculators</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#calculators">Calculators</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#how-it-works">About</a>
+    <a href="index.html#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO / BREADCRUMB ============================ -->
+  <section class="section" style="padding-top:40px;padding-bottom:24px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html#calculators">Calculators</a><span class="sep">/</span>
+        <span class="current">Earnings Calculator</span>
+      </nav>
+      <div class="text-center max-w-760" style="margin-top:28px;" data-aos="fade-up">
+        <span class="eyebrow"><i data-lucide="dollar-sign" style="width:14px;height:14px;"></i> Earnings Calculator</span>
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:18px;">Estimate your AdSense earnings <span class="text-gradient">in seconds.</span></h1>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16.5px;">Enter your pageviews, CTR, and CPC to project daily, monthly, and yearly revenue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CALCULATOR ============================ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:880px;">
+      <div class="glass-card" style="padding:36px;" data-aos="fade-up">
+        <form data-calculator="earnings" novalidate>
+          <div class="field">
+            <label for="pageviews">Pageviews</label>
+            <div class="input-wrap">
+              <input type="number" id="pageviews" name="pageviews" placeholder="e.g. 120000" min="0" data-min="0" required>
+              <span class="unit">/mo</span>
+            </div>
+            <p class="hint">Total monthly pageviews across your site.</p>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="ctr">Click-Through Rate (CTR)</label>
+            <div class="input-wrap">
+              <input type="number" id="ctr" name="ctr" placeholder="e.g. 2.5" min="0" max="100" step="0.01" data-min="0" required>
+              <span class="unit">%</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="cpc">Cost Per Click (CPC)</label>
+            <div class="input-wrap">
+              <input type="number" id="cpc" name="cpc" placeholder="e.g. 0.35" min="0" step="0.01" data-min="0" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-block">Calculate Earnings</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="glass-card mt-24" style="padding:36px;" data-results-card hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+          <h3 style="font-size:18px;">Your Results</h3>
+          <button class="btn btn-secondary btn-sm" data-copy-results><i data-lucide="copy" style="width:14px;height:14px;"></i> Copy Results</button>
+        </div>
+        <div class="result-grid">
+          <div class="result-item" data-result="clicks"><div class="label">Estimated Clicks</div><div class="value">—</div></div>
+          <div class="result-item primary" data-result="daily"><div class="label">Daily Earnings</div><div class="value">—</div></div>
+          <div class="result-item" data-result="monthly"><div class="label">Monthly Earnings</div><div class="value">—</div></div>
+          <div class="result-item" data-result="yearly"><div class="label">Yearly Earnings</div><div class="value">—</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ EDUCATIONAL CONTENT ============================ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container prose" style="max-width:760px;" data-aos="fade-up">
+
+      <h2>What is the AdSense Earnings Calculator?</h2>
+      <p>The AdSense Earnings Calculator turns three inputs — pageviews, click-through rate, and cost per click — into a clear revenue projection. Instead of manually multiplying numbers in a spreadsheet, you get an instant breakdown of estimated clicks alongside daily, monthly, and yearly earnings. It's built for bloggers, publishers, and site owners who want a fast, reliable way to understand what their traffic is actually worth.</p>
+      <p>Because everything runs in your browser, there's nothing to install and nothing to submit. Change any input and recalculate as many times as you like while you model different traffic or CTR scenarios.</p>
+
+      <h2>Why Earnings Estimation Matters</h2>
+      <p>Publishers rarely have a single, static earnings number — traffic grows, CTR shifts with content type, and CPC moves with advertiser demand and season. Estimating earnings before those numbers fully materialize helps with real decisions: is a new content strategy worth the effort, does a traffic dip justify concern, and how much should a site's growth be worth to a potential buyer or advertiser. A quick, repeatable calculation turns vague intuition into a number you can plan around.</p>
+
+      <h3>The Formula</h3>
+      <p>Earnings estimation builds from clicks upward. First, clicks are derived from pageviews and CTR, then multiplied by CPC to reach daily revenue:</p>
+      <div class="formula-box">Clicks = Pageviews × (CTR ÷ 100)<br>Daily Earnings = Clicks × CPC</div>
+      <p>Monthly and yearly figures are simple projections from the daily number — daily earnings multiplied by 30 for a month, or by 365 for a year. This keeps the math transparent: every output can be traced back to the three numbers you entered.</p>
+
+      <h3>Worked Example</h3>
+      <div class="example-box">
+        <p style="margin-bottom:0;">A blog with <strong>120,000 monthly pageviews</strong>, a <strong>2.5% CTR</strong>, and a <strong>$0.35 CPC</strong> generates 120,000 × 0.025 = <strong>3,000 clicks</strong>. At $0.35 per click, that's 3,000 × $0.35 = <strong>$1,050 per month</strong>, or roughly <strong>$35 per day</strong> and <strong>$12,775 per year</strong> at a steady rate.</p>
+      </div>
+
+      <h3>How to Use This Calculator</h3>
+      <ul>
+        <li><strong>Pageviews:</strong> Pull your total monthly pageviews from Google Analytics or AdSense reporting.</li>
+        <li><strong>CTR:</strong> Use your site's actual click-through rate if you have it; otherwise, a conservative estimate between 1% and 3% is typical for most niches.</li>
+        <li><strong>CPC:</strong> Enter your average cost per click, which varies widely by niche — finance and insurance sites often see higher CPCs than entertainment or general-interest blogs.</li>
+      </ul>
+      <p>Once entered, hit Calculate to see clicks and projected earnings update instantly. Adjust any field and recalculate to test different scenarios, like what a 0.5% CTR improvement would mean for monthly revenue.</p>
+
+      <h3>Tips for More Accurate Estimates</h3>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Use trailing 30-day averages for CTR and CPC rather than a single best day, which smooths out normal daily volatility.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Recalculate seasonally — CPC often rises in Q4 due to holiday advertiser demand and falls in slower months.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Model a range, not a point estimate: run the calculator with your best-case and worst-case CTR and CPC to understand the spread.</p></div>
+
+      <h3>Common Mistakes</h3>
+      <p>The most frequent error is using an unrealistically high CTR or CPC pulled from a single exceptional day rather than a representative average, which inflates projections. A second common mistake is forgetting that earnings scale with pageviews — a traffic drop of 20% translates directly into a 20% earnings drop at constant CTR and CPC, which is easy to overlook when focusing only on ad metrics.</p>
+
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-760">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="glass-card mt-24" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">What counts as a pageview for this calculator?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>A pageview is any single load of a page on your site — the same definition AdSense uses in its own reporting.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Why do my real earnings differ from the estimate?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Real CTR and CPC fluctuate with niche, season, device mix, and ad placement, so actual results will vary around this estimate.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Should I use average CTR and CPC or my own?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Your own historical figures from AdSense reporting will always produce a more realistic estimate than industry averages.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does this calculator account for ad viewability?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>No — it works from the CTR and CPC you provide, which already reflect whatever viewability your placements achieve.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I use this for a single page instead of a whole site?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes — enter that page's pageviews, CTR, and CPC to estimate earnings for just that page.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ RELATED CALCULATORS ============================ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Related Calculators</h2>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="mouse-pointer-click"></i></div><h3>CTR Calculator</h3><p>Calculate click-through rate from impressions and clicks.</p><a href="ctr-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="bar-chart-3"></i></div><h3>RPM Calculator</h3><p>Measure revenue per thousand pageviews.</p><a href="rpm-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="users"></i></div><h3>Traffic Needed</h3><p>Find pageviews required to hit a target earnings figure.</p><a href="traffic-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="target"></i></div><h3>Target Earnings</h3><p>Work backward from a goal to required clicks and pageviews.</p><a href="target-earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ NEWSLETTER ============================ -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#calculators">Calculators</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="index.html#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

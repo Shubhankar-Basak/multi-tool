@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Clicks Needed Calculator — Clicks for a Revenue Target</title>
+<meta name="description" content="Calculate the number of ad clicks needed to hit a target AdSense earnings goal using your CPC. Free and instant.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/clicks-needed-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense Clicks Needed Calculator — Clicks for a Revenue Target">
+<meta property="og:description" content="Calculate the number of ad clicks needed to hit a target AdSense earnings goal using your CPC. Free and instant.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/clicks-needed-calculator.html">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense Clicks Needed Calculator — Clicks for a Revenue Target">
+<meta name="twitter:description" content="Calculate the number of ad clicks needed to hit a target AdSense earnings goal using your CPC. Free and instant.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://adsensetoolkit.example.com/"},
+    {"@type": "ListItem","position": 2,"name": "Clicks Needed Calculator","item": "https://adsensetoolkit.example.com/clicks-needed-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Is this the same as the Target Earnings Calculator?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's a simpler version that skips CTR and pageviews, focusing purely on the relationship between clicks and CPC."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Where do I get an accurate CPC figure?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use the CPC Calculator on this site or pull your average CPC directly from AdSense reporting."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does CPC stay constant as clicks scale up?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not always \u2014 CPC can shift slightly as traffic volume and advertiser demand change, so treat large targets as estimates."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can I use this for a single campaign instead of my whole site?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, enter the campaign's target earnings and its specific average CPC for a campaign-level estimate."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How does this relate to pageviews?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It doesn't calculate pageviews directly \u2014 pair it with the Impressions Needed Calculator if you need that figure too."
+    }
+  }
+]
+}
+</script>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#calculators">Calculators</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#how-it-works">About</a>
+      <a href="index.html#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="index.html#calculators" class="btn btn-primary btn-sm">All Calculators</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#calculators">Calculators</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#how-it-works">About</a>
+    <a href="index.html#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-top:40px;padding-bottom:24px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html#calculators">Calculators</a><span class="sep">/</span>
+        <span class="current">Clicks Needed Calculator</span>
+      </nav>
+      <div class="text-center max-w-760" style="margin-top:28px;" data-aos="fade-up">
+        <span class="eyebrow"><i data-lucide="pointer" style="width:14px;height:14px;"></i> Clicks Needed Calculator</span>
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:18px;">Find the clicks behind your <span class="text-gradient">earnings goal.</span></h1>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16.5px;">Enter a target earnings figure and your CPC to see the clicks required.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:880px;">
+      <div class="glass-card" style="padding:36px;" data-aos="fade-up">
+        <form data-calculator="clicks-needed" novalidate>
+          <div class="field">
+            <label for="target">Target Earnings</label>
+            <div class="input-wrap">
+              <input type="number" id="target" name="target" placeholder="e.g. 500" min="0" data-min="0" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="cpc">Your CPC</label>
+            <div class="input-wrap">
+              <input type="number" id="cpc" name="cpc" placeholder="e.g. 0.40" min="0.01" step="0.01" data-min="0.01" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="glass-card mt-24" style="padding:36px;" data-results-card hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+          <h3 style="font-size:18px;">Your Results</h3>
+          <button class="btn btn-secondary btn-sm" data-copy-results><i data-lucide="copy" style="width:14px;height:14px;"></i> Copy Results</button>
+        </div>
+        <div class="result-grid">
+          <div class="result-item primary" data-result="clicks"><div class="label">Required Clicks</div><div class="value">—</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container prose" style="max-width:760px;" data-aos="fade-up">
+
+      <h2>What is the Clicks Needed Calculator?</h2>
+      <p>The Clicks Needed Calculator answers a narrow but useful question: at your current average CPC, how many ad clicks does it take to reach a specific earnings goal? It strips out pageviews and CTR entirely, focusing purely on the click-to-revenue relationship.</p>
+      <p>Enter your target earnings and average CPC to see the exact click count required.</p>
+
+      <h2>Why This Calculator Matters</h2>
+      <p>This calculator is especially useful when evaluating campaigns, promotions, or traffic sources where you have visibility into click counts but want to translate that directly into a revenue expectation, without needing to separately model pageviews or CTR.</p>
+
+      <h3>The Formula</h3>
+      <div class="formula-box">Required Clicks = Target Earnings ÷ CPC</div>
+      <p>This is the most direct possible relationship between clicks and revenue: dividing the goal by the average value of each click gives the number of clicks needed.</p>
+
+      <h3>Worked Example</h3>
+      <div class="example-box">
+        <p style="margin-bottom:0;">To reach <strong>$500</strong> at a CPC of <strong>$0.40</strong>, you need $500 ÷ 0.40 = <strong>1,250 clicks</strong>.</p>
+      </div>
+
+      <h3>How to Use This Calculator</h3>
+      <ul>
+        <li><strong>Target Earnings:</strong> Enter the revenue figure you're aiming for over your chosen period.</li>
+        <li><strong>Your CPC:</strong> Use your actual average CPC from AdSense reporting or the CPC Calculator for the most reliable result.</li>
+      </ul>
+      <p>Because CPC can swing with advertiser demand, pair this with a range of CPC values — typical and conservative — to see how sensitive your click target is to CPC changes.</p>
+
+      <h3>Tips for Reaching Your Click Target</h3>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">If you have a fixed pageview budget, use this figure together with the Impressions Needed Calculator to check whether your CTR can realistically deliver enough clicks.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Higher-CPC content reduces the number of clicks needed for the same revenue goal — worth weighing against expected traffic volume.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Track actual clicks against this target throughout the period to catch pacing issues early.</p></div>
+
+      <h3>Common Mistakes</h3>
+      <p>A common misstep is assuming CPC stays flat as click volume scales — in practice, CPC can decline slightly as you attract more marginal traffic, so very large click targets should be treated as approximate. It's also easy to conflate this figure with total pageviews needed; remember this is clicks specifically, not visits or impressions.</p>
+    
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-760">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="glass-card mt-24" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Is this the same as the Target Earnings Calculator?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>It's a simpler version that skips CTR and pageviews, focusing purely on the relationship between clicks and CPC.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Where do I get an accurate CPC figure?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Use the CPC Calculator on this site or pull your average CPC directly from AdSense reporting.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does CPC stay constant as clicks scale up?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Not always — CPC can shift slightly as traffic volume and advertiser demand change, so treat large targets as estimates.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I use this for a single campaign instead of my whole site?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, enter the campaign's target earnings and its specific average CPC for a campaign-level estimate.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How does this relate to pageviews?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>It doesn't calculate pageviews directly — pair it with the Impressions Needed Calculator if you need that figure too.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Related Calculators</h2>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="coins"></i></div><h3>CPC Calculator</h3><p>Find your average cost per click from earnings and total clicks.</p><a href="cpc-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="target"></i></div><h3>Target Earnings Calculator</h3><p>Work backward from a revenue goal to required clicks and pageviews.</p><a href="target-earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="users"></i></div><h3>Traffic Needed Calculator</h3><p>Find the pageviews required to reach a target earnings figure.</p><a href="traffic-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="eye"></i></div><h3>Impressions Needed Calculator</h3><p>Determine the impressions needed to generate a target number of clicks.</p><a href="impressions-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#calculators">Calculators</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="index.html#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

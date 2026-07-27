@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Traffic Needed Calculator — Pageviews for a Revenue Goal</title>
+<meta name="description" content="Calculate the pageviews you need to reach a target AdSense earnings goal using your RPM. Free and instant.">
+<link rel="canonical" href="https://adsensetoolkit.example.com/traffic-needed-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdSense Traffic Needed Calculator — Pageviews for a Revenue Goal">
+<meta property="og:description" content="Calculate the pageviews you need to reach a target AdSense earnings goal using your RPM. Free and instant.">
+<meta property="og:url" content="https://adsensetoolkit.example.com/traffic-needed-calculator.html">
+<meta property="og:site_name" content="AdSense Toolkit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdSense Traffic Needed Calculator — Pageviews for a Revenue Goal">
+<meta name="twitter:description" content="Calculate the pageviews you need to reach a target AdSense earnings goal using your RPM. Free and instant.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem","position": 1,"name": "Home","item": "https://adsensetoolkit.example.com/"},
+    {"@type": "ListItem","position": 2,"name": "Traffic Needed Calculator","item": "https://adsensetoolkit.example.com/traffic-needed-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Where do I find my current RPM?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use the RPM Calculator on this site, or pull it directly from your AdSense performance reports."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does this work for a weekly target instead of monthly?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, as long as your RPM reflects the same period as your target earnings figure."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "What if my RPM varies a lot month to month?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use a trailing average RPM rather than a single month for a more stable, realistic traffic estimate."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Is this the same as the Target Earnings Calculator?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's similar but uses RPM directly instead of breaking the goal into separate CTR and CPC assumptions."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can I use this to plan content production volume?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, many publishers use the pageview target to estimate how many articles or pages they need to publish."
+    }
+  }
+]
+}
+</script>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>
+      AdSense Toolkit
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#calculators">Calculators</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#how-it-works">About</a>
+      <a href="index.html#newsletter">Contact</a>
+    </div>
+    <div class="header-actions">
+      <a href="index.html#calculators" class="btn btn-primary btn-sm">All Calculators</a>
+      <button class="btn-menu" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#calculators">Calculators</a>
+    <a href="index.html#features">Features</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#how-it-works">About</a>
+    <a href="index.html#newsletter">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section" style="padding-top:40px;padding-bottom:24px;">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html#calculators">Calculators</a><span class="sep">/</span>
+        <span class="current">Traffic Needed Calculator</span>
+      </nav>
+      <div class="text-center max-w-760" style="margin-top:28px;" data-aos="fade-up">
+        <span class="eyebrow"><i data-lucide="users" style="width:14px;height:14px;"></i> Traffic Needed Calculator</span>
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:18px;">Find the traffic behind your <span class="text-gradient">revenue goal.</span></h1>
+        <p style="color:var(--color-text-secondary);margin-top:14px;font-size:16.5px;">Enter a target earnings figure and your RPM to see the pageviews required.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:880px;">
+      <div class="glass-card" style="padding:36px;" data-aos="fade-up">
+        <form data-calculator="traffic-needed" novalidate>
+          <div class="field">
+            <label for="target">Target Earnings</label>
+            <div class="input-wrap">
+              <input type="number" id="target" name="target" placeholder="e.g. 1000" min="0" data-min="0" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="rpm">Your RPM</label>
+            <div class="input-wrap">
+              <input type="number" id="rpm" name="rpm" placeholder="e.g. 8.00" min="0.01" step="0.01" data-min="0.01" required>
+              <span class="unit">$</span>
+            </div>
+            <p class="error-msg" role="alert"></p>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="glass-card mt-24" style="padding:36px;" data-results-card hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+          <h3 style="font-size:18px;">Your Results</h3>
+          <button class="btn btn-secondary btn-sm" data-copy-results><i data-lucide="copy" style="width:14px;height:14px;"></i> Copy Results</button>
+        </div>
+        <div class="result-grid">
+          <div class="result-item primary" data-result="pageviews"><div class="label">Required Pageviews</div><div class="value">—</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container prose" style="max-width:760px;" data-aos="fade-up">
+
+      <h2>What is the Traffic Needed Calculator?</h2>
+      <p>The Traffic Needed Calculator answers a specific planning question: given how well your site currently monetizes per 1,000 pageviews (your RPM), how much total traffic do you need to hit a specific earnings goal? It's the most direct way to translate a revenue target into a traffic target using a single, already-known efficiency metric.</p>
+      <p>Enter your target earnings and current RPM to get an instant pageview requirement.</p>
+
+      <h2>Why This Calculator Matters</h2>
+      <p>RPM already captures your blended CTR and CPC performance in one number, which makes this calculator faster to use than the Target Earnings Calculator when you don't want to break the goal down into clicks separately. It's especially useful for setting SEO or content-volume targets tied directly to a revenue outcome.</p>
+
+      <h3>The Formula</h3>
+      <div class="formula-box">Required Pageviews = (Target Earnings ÷ RPM) × 1,000</div>
+      <p>This rearranges the standard RPM formula to solve for pageviews instead of revenue — dividing your goal by RPM per pageview, then rescaling by 1,000 to match RPM's "per thousand" convention.</p>
+
+      <h3>Worked Example</h3>
+      <div class="example-box">
+        <p style="margin-bottom:0;">To reach <strong>$1,000</strong> at an RPM of <strong>$8.00</strong>, you need ($1,000 ÷ 8.00) × 1,000 = <strong>125,000 pageviews</strong>.</p>
+      </div>
+
+      <h3>How to Use This Calculator</h3>
+      <ul>
+        <li><strong>Target Earnings:</strong> Set the revenue figure you're planning for, over whatever period your RPM reflects.</li>
+        <li><strong>Your RPM:</strong> Use your actual site RPM from the RPM Calculator or AdSense reporting for the most accurate result.</li>
+      </ul>
+      <p>Because RPM shifts with season and content mix, use a recent, representative RPM rather than an outlier month for a more reliable traffic estimate.</p>
+
+      <h3>Tips for Hitting Your Traffic Target</h3>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Break the total pageview goal into a monthly or weekly cadence to track progress incrementally rather than all at once.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Raising RPM through better ad placement reduces the traffic needed to hit the same goal — often faster than growing traffic alone.</p></div>
+      <div class="tip-box"><i data-lucide="check-circle-2" class="icon"></i><p style="margin:0;">Recalculate whenever RPM shifts meaningfully, such as after a redesign or a seasonal advertiser demand change.</p></div>
+
+      <h3>Common Mistakes</h3>
+      <p>Using a single exceptional month's RPM — often inflated by a seasonal spike — will understate the traffic actually required in a typical month. It's also worth remembering that RPM tends to shift as traffic scales, since new visitor sources often convert differently than existing ones, so very large traffic targets should be treated as directional rather than exact.</p>
+    
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container max-w-760">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="glass-card mt-24" style="padding:12px 28px;" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Where do I find my current RPM?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Use the RPM Calculator on this site, or pull it directly from your AdSense performance reports.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does this work for a weekly target instead of monthly?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, as long as your RPM reflects the same period as your target earnings figure.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What if my RPM varies a lot month to month?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Use a trailing average RPM rather than a single month for a more stable, realistic traffic estimate.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is this the same as the Target Earnings Calculator?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>It's similar but uses RPM directly instead of breaking the goal into separate CTR and CPC assumptions.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I use this to plan content production volume?<i data-lucide="chevron-down" class="chev"></i></button>
+          <div class="faq-answer"><p>Yes, many publishers use the pageview target to estimate how many articles or pages they need to publish.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 class="text-center" style="font-size:26px;" data-aos="fade-up">Related Calculators</h2>
+      <div class="grid-4 mt-48">
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="bar-chart-3"></i></div><h3>RPM Calculator</h3><p>Measure revenue per thousand pageviews across your site.</p><a href="rpm-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="target"></i></div><h3>Target Earnings Calculator</h3><p>Work backward from a revenue goal to required clicks and pageviews.</p><a href="target-earnings-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="pointer"></i></div><h3>Clicks Needed Calculator</h3><p>Calculate the clicks required to hit a target earnings amount.</p><a href="clicks-needed-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+        <div class="glass-card calc-card" data-aos="fade-up"><div class="calc-icon"><i data-lucide="calendar-days"></i></div><h3>Monthly Revenue Calculator</h3><p>Project weekly, monthly and yearly revenue from a daily figure.</p><a href="monthly-revenue-calculator.html" class="btn btn-secondary">Open Calculator</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="glass-card text-center" style="padding:56px 32px;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+        <div class="calc-icon" style="margin-inline:auto;"><i data-lucide="mail"></i></div>
+        <h2 style="font-size:26px;margin-top:20px;">Stay Updated</h2>
+        <p style="color:var(--color-text-secondary);margin-top:10px;">Get notified when we add new calculators and publisher resources.</p>
+        <form data-newsletter-form style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;justify-content:center;">
+          <div style="flex:1;min-width:220px;">
+            <input type="email" placeholder="you@example.com" required aria-label="Email address" style="width:100%;padding:14px 18px;border-radius:999px;border:1.5px solid var(--color-border-solid);font-size:15px;">
+          </div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="blob blob-teal" style="width:300px;height:300px;top:0;right:-100px;opacity:0.15;"></div>
+  <div class="container relative z-10">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;"><span class="brand-mark"><i data-lucide="calculator" style="width:18px;height:18px;"></i></span>AdSense Toolkit</div>
+        <p style="margin-top:16px;max-width:280px;font-size:14.5px;color:rgba(255,255,255,0.7);">Free, instant, client-side AdSense calculators for publishers of every size.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#calculators">Calculators</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="earnings-calculator.html">Earnings</a></li>
+          <li><a href="ctr-calculator.html">CTR</a></li>
+          <li><a href="rpm-calculator.html">RPM</a></li>
+          <li><a href="target-earnings-calculator.html">Target Earnings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="index.html#newsletter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AdSense Toolkit. All rights reserved.</span>
+      <button class="back-to-top" aria-label="Back to top"><i data-lucide="arrow-up" style="width:18px;height:18px;"></i></button>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
